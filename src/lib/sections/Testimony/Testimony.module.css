@@ -1,0 +1,28 @@
+/* Testimony.module.css */
+
+.testimonySection {
+  padding: var(--paddingLarge);
+  background-color: var(--background);
+  text-align: center;
+}
+
+.header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: var(--paddingMedium);
+  color: var(--textColor);
+}
+.headingContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  align-items: center;
+}
+.paragraph {
+  font-size: 1rem;
+  margin-bottom: var(--paddingLarge);
+  color: var(--textColor);
+  margin: 0;
+  text-align: center;
+  max-width: 540px;
+}

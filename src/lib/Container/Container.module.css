@@ -1,0 +1,9 @@
+/* Container.module.css */
+
+.container {
+  padding-left: var(--paddingLeftRight);
+  padding-right: var(--paddingLeftRight);
+  padding-top: var(--paddingTopBottom);
+  padding-bottom: var(--paddingTopBottom);
+  width: 100vw;
+}

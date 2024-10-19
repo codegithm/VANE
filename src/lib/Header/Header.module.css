@@ -1,0 +1,29 @@
+/* Header.module.css */
+
+.nav {
+  background-color: rgba(194, 235, 252, 0.1); /* #C2EBFC1A with transparency */
+  position: relative;
+  padding-left: var(--paddingLeftRight);
+  padding-right: var(--paddingLeftRight);
+  position: absolute;
+  width: 100vw;
+  z-index: 2;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--paddingLarge) 0;
+}
+
+.logo {
+  width: 120px; /* Further reduced width */
+  height: auto;
+  max-height: 50px;
+}
+
+.chat {
+  font-family: "Inter", sans-serif;
+  color: var(--background); /* Ensures the text is clearly visible */
+}

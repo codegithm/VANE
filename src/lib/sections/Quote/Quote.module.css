@@ -1,0 +1,55 @@
+/* Quote.module.css */
+
+.section {
+  display: flex;
+  height: 90vh;
+  background: url("/assets/tsepi.png") no-repeat center center;
+  background-size: cover;
+}
+
+.imageContainer {
+  flex: 1;
+}
+
+.quoteContainer {
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(7, 30, 70, 0) 7.91%,
+    #071e46 51.28%,
+    #010425 77.86%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.quoteContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--paddingSmall);
+  color: white;
+  text-align: center;
+  max-width: 399px;
+  text-align: right;
+  align-items: flex-end;
+  padding-right: var(--paddingLeftRight);
+}
+
+.line {
+  height: 2px;
+  background-color: white;
+  margin: var(--paddingSmall) 0;
+  max-width: 100px;
+  width: 100%;
+}
+
+.personal {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.heading {
+  margin: 0;
+}

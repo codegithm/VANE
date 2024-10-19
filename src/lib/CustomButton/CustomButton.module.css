@@ -1,0 +1,20 @@
+/* CustomButton.module.css */
+
+.button {
+  display: inline-block;
+  padding: var(--paddingSmall) var(--paddingLarge);
+  background-color: var(--buttonColor); /* Update button color */
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--borderRadius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: darken(var(--buttonColor), 10%);
+}

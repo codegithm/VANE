@@ -1,0 +1,51 @@
+/* Explore.module.css */
+
+.parent {
+  display: flex;
+  gap: var(--paddingLarge);
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--paddingLarge);
+  max-width: 100%;
+  max-height: 100%;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.image {
+  border-radius: var(--borderRadius);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--paddingSmall);
+  max-width: 600px;
+  /* background-color: var(--backgroundPrimary); */
+  padding: var(--paddingSmall);
+  border-radius: var(--borderRadius);
+  color: var(--textColor); /* Update text color */
+}
+
+.textContainer h2 {
+  font-size: 2rem;
+  margin-bottom: var(--paddingSmall);
+}
+
+.textContainer p {
+  font-size: 1rem;
+  margin-bottom: var(--paddingMedium);
+}
+
+.containerdiv {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: fit-content;
+}
+.primaryText {
+  color: var(--buttonColor);
+}

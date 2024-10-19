@@ -1,0 +1,52 @@
+/* CustomCarousel.module.css */
+
+.carouselWrapper {
+  position: relative;
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.emblaContainer {
+  display: flex;
+}
+
+.emblaSlide {
+  position: relative;
+  min-width: 38%;
+  padding: 10px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.emblaButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: var(--textColor);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.emblaButtonPrev {
+  left: 10px;
+}
+
+.emblaButtonNext {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .emblaSlide {
+    min-width: 100%; /* Show one card at a time on smaller screens */
+  }
+}

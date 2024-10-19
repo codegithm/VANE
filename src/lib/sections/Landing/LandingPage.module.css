@@ -1,0 +1,51 @@
+/* LandingPage.module.css */
+
+.section {
+  position: relative;
+  height: 100vh;
+  background: url("/assets/background.png") no-repeat center center;
+  background-size: cover;
+}
+
+.gradientOverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    270deg,
+    rgba(217, 217, 217, 0) 3.29%,
+    #0d3b79 68.09%
+  );
+}
+
+.containerContent {
+  color: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.containerContent h2 {
+  font-size: 2rem;
+  margin-bottom: var(--paddingSmall);
+}
+
+.containerContent p {
+  font-size: 1.25rem;
+  margin-bottom: var(--paddingMedium);
+}
+
+.newLine {
+  display: flex;
+  width: 100%;
+}
+
+.emailUpdates {
+  margin-top: var(--paddingLarge);
+}
+.primaryText {
+  color: var(--buttonColor);
+}

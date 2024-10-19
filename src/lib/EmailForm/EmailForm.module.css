@@ -1,0 +1,42 @@
+/* EmailForm.module.css */
+
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.label {
+  margin-bottom: var(--paddingSmall);
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+}
+
+.input {
+  padding: var(--paddingSmall) var(--paddingMedium);
+  margin-bottom: var(--paddingSmall);
+  border: 1px solid #ccc;
+  border-radius: var(--borderRadius);
+  margin: 0 !important;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accentColor);
+}
+
+.error {
+  color: var(--errorColor);
+}
+
+.button {
+  padding: var(--paddingSmall) var(--paddingMedium);
+  margin-top: var(--paddingSmall);
+  background-color: var(--accentColor);
+  color: white;
+  border-radius: var(--borderRadius);
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+}
