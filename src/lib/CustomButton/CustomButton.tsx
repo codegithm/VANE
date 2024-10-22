@@ -15,8 +15,8 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   textColor,
   children,
   type = "button",
-  onClick,
   widthSize,
+  onClick,
 }) => {
   const buttonStyle = {
     backgroundColor: bgColor || "var(--accentColor)",

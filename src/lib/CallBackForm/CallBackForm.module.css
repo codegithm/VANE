@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--paddingMedium);
+  background-color: var(--backgroundPrimary);
+  padding: var(--paddingLarge);
+  border-radius: var(--borderRadius);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--paddingSmall);
+}
+
+.label {
+  color: var(--textColor);
+  font-weight: bold;
+}
+
+.input {
+  padding: var(--paddingSmall);
+  border: 1px solid var(--backgroundSecondary);
+  border-radius: var(--borderRadius);
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+}

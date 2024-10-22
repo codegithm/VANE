@@ -1,34 +1,55 @@
-/* globals.css */
+/* Import Inter font from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
+/* Theme Colors */
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --backgroundPrimary: #f5f5f5;
   --backgroundSecondary: #e0e0e0;
-  --backgroundTetiary: #d0d0d0;
+  --backgroundTertiary: #d0d0d0;
+  --backgroundGradientPrimary: linear-gradient(
+    180deg,
+    #071f47 0%,
+    #000020 100%
+  );
+  --backgroundGradientSecondary: linear-gradient(
+    90deg,
+    rgba(7, 30, 70, 0) 7.91%,
+    #071e46 51.28%,
+    #010425 77.86%
+  );
   --accentColor: #0d3b79;
   --buttonColor: #43b5f7;
   --textColor: #0f294c;
-
   --paddingSmall: 8px;
   --paddingMedium: 16px;
   --paddingLarge: 24px;
-  --paddingLeftRight: 11%; /* New padding left and right */
-  --paddingTopBottom: 59px; /* New padding top and bottom */
+  --paddingLeftRight: 11%;
+  --paddingTopBottom: 59px;
   --borderRadius: 8px;
 }
 
+/* Box-sizing for all elements */
 * {
   box-sizing: border-box;
 }
+
+/* Dark theme settings */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --backgroundPrimary: #1a1a1a;
+    --backgroundSecondary: #333333;
+    --backgroundTertiary: #4d4d4d;
+    --accentColor: #bb86fc;
+    --buttonColor: #03dac6;
+    --textColor: #ffffff;
   }
 }
 
+/* Body Styles */
 body {
   color: var(--foreground);
   background: var(--background);
@@ -37,13 +58,15 @@ body {
   margin: 0 !important;
 }
 
+/* Responsive Padding for small screens */
 @media screen and (max-width: 400px) {
   :root {
-    --paddingLeftRight: 5%; /* New padding left and right */
-    --paddingTopBottom: 20px; /* New padding top and bottom */
+    --paddingLeftRight: 5%;
+    --paddingTopBottom: 20px;
   }
 }
 
+/* Utility Class for Text Balancing */
 @layer utilities {
   .text-balance {
     text-wrap: balance;

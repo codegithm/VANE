@@ -35,7 +35,7 @@ const Explore: React.FC = () => {
               textColor="var(--background)"
               type="button"
             >
-              Learn More
+              Explore
             </CustomButton>
           </div>
         </div>

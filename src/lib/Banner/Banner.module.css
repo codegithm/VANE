@@ -24,6 +24,13 @@
   color: var(--background);
 }
 
+.largeModalText {
+  font-size: 1.25rem;
+  color: var(--textColor);
+  display: flex;
+  justify-content: center;
+}
+
 .buttonContainer {
   display: flex;
   flex-direction: column;

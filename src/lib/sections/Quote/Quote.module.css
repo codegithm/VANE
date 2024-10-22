@@ -7,6 +7,12 @@
   background-size: cover;
 }
 
+@media screen and (max-width: 670px) {
+  .section {
+    height: auto;
+    background-position-x: left;
+  }
+}
 .imageContainer {
   flex: 1;
 }

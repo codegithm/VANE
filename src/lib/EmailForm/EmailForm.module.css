@@ -6,6 +6,7 @@
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .label {
@@ -20,6 +21,7 @@
   border: 1px solid #ccc;
   border-radius: var(--borderRadius);
   margin: 0 !important;
+  flex: 1;
 }
 
 .input:focus {

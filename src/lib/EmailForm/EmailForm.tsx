@@ -43,6 +43,7 @@ const EmailForm: React.FC = () => {
         bgColor="var(--buttonColor)"
         textColor="var(--background)"
         type="submit"
+        widthSize="106px"
       >
         <span>Submit</span>
       </CustomButton>
