@@ -4,7 +4,6 @@ import Explore from "@/lib/sections/Explore/Explore";
 import Banner from "@/lib/Banner/Banner";
 import Quote from "@/lib/sections/Quote/Quote";
 import Testimony from "@/lib/sections/Testimony/Testimony";
-import Offers from "@/lib/sections/Offers/Offers";
 
 export default function Home() {
   return (

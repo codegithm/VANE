@@ -1,9 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import EmblaCarousel, {
-  EmblaCarouselType,
-  EmblaOptionsType,
-} from "embla-carousel";
+import EmblaCarousel, { EmblaCarouselType } from "embla-carousel";
 import styles from "./SkillsCarousel.module.css";
 import Skills from "../Skills/Skills";
 
