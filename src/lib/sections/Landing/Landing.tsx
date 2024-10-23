@@ -31,7 +31,10 @@ const LandingPage: React.FC = () => {
                   <span className={styles.newLine}>unique business.</span>
                 </p>
               </div>
-              <div className={styles.containerContent}>
+              <div
+                style={{ paddingBottom: "24px" }}
+                className={styles.containerContent}
+              >
                 <p>Receive updates on our latest promotions.</p>
                 <EmailForm />
               </div>

@@ -1,0 +1,104 @@
+/* components/MainFooter.module.css */
+.footer {
+  background-color: #070300;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoFormContainer,
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.title,
+.subtitle {
+  margin: 0;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.parentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.designer {
+  border-top: solid 1px #e0e0e0;
+}
+
+.label,
+.checkboxLabel,
+.title,
+.subtitle {
+  font-weight: bold;
+}
+
+.input {
+  margin-bottom: 0;
+  padding: var(--paddingSmall);
+  border: 1px solid white;
+  border-radius: 0;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.checkbox {
+  margin-right: var(--paddingSmall);
+}
+
+.checkboxLabel {
+  font-weight: normal;
+}
+
+.button {
+  background-color: var(--buttonColor);
+  color: var(--textColorPrimary);
+  padding: var(--paddingSmall) var(--paddingMedium);
+  border: none;
+  cursor: pointer;
+  width: 122px;
+}
+
+.blood {
+  color: var(--buttonColor);
+}
+
+.socialContainer {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  flex-direction: column;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.icons a {
+  margin-right: var(--paddingSmall);
+  color: white;
+}
+
+.icons a:hover {
+  color: var(--buttonColor);
+}
+
+.icon {
+  width: 22px;
+}
