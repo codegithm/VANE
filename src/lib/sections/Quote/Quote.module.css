@@ -2,7 +2,7 @@
 
 .section {
   display: flex;
-  height: 90vh;
+  height: 75vh;
   background: url("/assets/tsepi.png") no-repeat center center;
   background-size: cover;
 }

@@ -19,7 +19,12 @@
     #0d3b79 68.09%
   );
 }
-
+.landingContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: flex-end;
+}
 .containerContent {
   color: var(--background);
   display: flex;

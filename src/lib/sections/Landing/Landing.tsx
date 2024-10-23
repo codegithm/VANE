@@ -10,28 +10,34 @@ const LandingPage: React.FC = () => {
     <>
       <Header />
       <section className={styles.section} id="landing">
-        <Container>
-          <div
-            className={styles.containerContent}
-            style={{ gap: "22px", position: "absolute", bottom: "18%" }}
-          >
-            <div className={styles.containerContent}>
-              <h2>
-                It&apos;s In{" "}
-                <span className={styles.primaryText}>Our Blood.</span>
-              </h2>
-              <p>
-                Let us help you ensure quality design tailored to your
-                <br />
-                <span className={styles.newLine}>unique business.</span>
-              </p>
+        <div className={styles.landingContainer}>
+          <Container>
+            <div
+              className={styles.containerContent}
+              style={{
+                gap: "22px",
+                bottom: "18%",
+                paddingBottom: "var(--paddingLarge)",
+              }}
+            >
+              <div className={styles.containerContent}>
+                <h2>
+                  It&apos;s In{" "}
+                  <span className={styles.primaryText}>Our Blood.</span>
+                </h2>
+                <p>
+                  Let us help you ensure quality design tailored to your
+                  <br />
+                  <span className={styles.newLine}>unique business.</span>
+                </p>
+              </div>
+              <div className={styles.containerContent}>
+                <p>Receive updates on our latest promotions.</p>
+                <EmailForm />
+              </div>
             </div>
-            <div className={styles.containerContent}>
-              <p>Receive updates on our latest promotions.</p>
-              <EmailForm />
-            </div>
-          </div>
-        </Container>
+          </Container>
+        </div>
       </section>
       <Footer />
     </>
