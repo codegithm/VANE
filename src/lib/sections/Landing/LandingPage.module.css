@@ -3,7 +3,7 @@
 .section {
   position: relative;
   height: 100vh;
-  background: url("/assets/background.png") no-repeat center center;
+  background: var(--landingBackgroundImage) no-repeat center center;
   background-size: cover;
 }
 
@@ -26,7 +26,7 @@
   align-items: flex-end;
 }
 .containerContent {
-  color: var(--background);
+  color: var(--textColorSecondary);
   display: flex;
   flex-direction: column;
   align-items: flex-start;

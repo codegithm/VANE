@@ -5,10 +5,10 @@ import SkillsCarousel from "@/lib/SkillsCarousel/SkillsCarousel";
 const Offers: React.FC = () => {
   return (
     <section className={styles.container}>
-      <div className={styles.sectionsContainer}>
+      {/* <div className={styles.sectionsContainer}>
         <div className={styles.leftSection}></div>
         <div className={styles.rightSection}></div>
-      </div>
+      </div> */}
       <SkillsCarousel />
     </section>
   );

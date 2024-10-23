@@ -4,7 +4,7 @@
   padding: var(--paddingMedium);
   border-radius: var(--borderRadius);
   text-align: center;
-  background-color: #f5f5f5;
+  background-color: var(--backgroundPrimary);
   max-width: 350px;
 }
 

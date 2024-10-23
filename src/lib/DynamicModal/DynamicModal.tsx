@@ -2,6 +2,9 @@
 import React from "react";
 import ReactModal from "react-modal";
 import styles from "./DynamicModal.module.css";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface DynamicModalProps {
   isOpen: boolean;
@@ -14,6 +17,10 @@ const DynamicModal: React.FC<DynamicModalProps> = ({
   onClose,
   children,
 }) => {
+  useEffect(() => {
+    AOS.init({ duration: 1200 });
+  }, []);
+
   return (
     <ReactModal
       isOpen={isOpen}
@@ -21,11 +28,14 @@ const DynamicModal: React.FC<DynamicModalProps> = ({
       className={styles.modal}
       overlayClassName={styles.overlay}
       ariaHideApp={false}
+      data-aos="fade-in"
     >
       <button className={styles.closeButton} onClick={onClose}>
         &times;
       </button>
-      <div className={styles.content}>{children}</div>
+      <div data-aos="fade-in" className={styles.content}>
+        {children}
+      </div>
     </ReactModal>
   );
 };

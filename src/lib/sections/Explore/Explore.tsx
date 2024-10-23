@@ -1,10 +1,17 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import styles from "./Explore.module.css";
 import CustomButton from "@/lib/CustomButton/CustomButton";
 import Container from "@/lib/Container/Container";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Explore: React.FC = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1200 });
+  }, []);
   return (
     <section className={styles.containerdiv} id="explore">
       <Container>
@@ -16,6 +23,7 @@ const Explore: React.FC = () => {
             height={300}
             className={styles.image}
             layout="fixed"
+            data-aos="fade-in"
           />
 
           <div className={styles.textContainer}>

@@ -1,11 +1,14 @@
-/* CustomCarousel.module.css */
-
-.carouselWrapper {
+/* components/SkilledCarousel.module.css */
+.carousel {
+  display: flex;
+  align-items: center;
   position: relative;
+  width: 100%;
 }
 
 .embla {
   overflow: hidden;
+  width: 100%;
 }
 
 .emblaContainer {
@@ -13,41 +16,32 @@
 }
 
 .emblaSlide {
-  position: relative;
-  min-width: 38%;
-  padding: 10px;
-  width: auto;
-  display: flex;
-  justify-content: center;
+  min-width: 100%;
+  padding: var(--paddingSmall);
 }
 
-.emblaButton {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.prevButton,
+.nextButton {
+  background-color: var(--buttonColor);
+  border: none;
+  border-radius: 50%;
+  color: var(--textColor);
+  cursor: pointer;
   width: 40px;
   height: 40px;
-  background-color: var(--textColor);
-  border-radius: 50%;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 1;
-  border: none;
 }
 
-.emblaButtonPrev {
+.prevButton {
   left: 10px;
 }
 
-.emblaButtonNext {
+.nextButton {
   right: 10px;
-}
-
-@media (max-width: 768px) {
-  .emblaSlide {
-    min-width: 100%; /* Show one card at a time on smaller screens */
-  }
 }

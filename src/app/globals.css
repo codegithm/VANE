@@ -19,9 +19,11 @@
     #071e46 51.28%,
     #010425 77.86%
   );
+  --landingBackgroundImage: url("/assets/background.png");
   --accentColor: #0d3b79;
   --buttonColor: #43b5f7;
   --textColor: #0f294c;
+  --textColorSecondary: #ffff;
   --paddingSmall: 8px;
   --paddingMedium: 16px;
   --paddingLarge: 24px;
@@ -46,6 +48,7 @@
     --accentColor: #bb86fc;
     --buttonColor: #03dac6;
     --textColor: #ffffff;
+    --textColorSecondary: #ffff;
   }
 }
 
