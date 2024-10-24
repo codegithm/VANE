@@ -18,16 +18,14 @@ import { SubscriberEmail } from "../../../models/SubscriberEmail";
 const MainFooter: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
-  const [policy, setPolicy] = useState<boolean>(false);
   const [success, setSuccess] = useState<string>("");
-  const [form, setForm] = useState<HTMLFormElement>();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
-  const handleChangePolicy = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // setPolicy(e.target.value);
-  };
+  //   const handleChangePolicy = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //     // setPolicy(e.target.value);
+  //   };
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
@@ -46,8 +44,10 @@ const MainFooter: React.FC = () => {
     try {
       await axios.post("/api/subscribe", { subscriber });
       setSuccess("You’ve successfully subscribed!");
-    } catch (error) {
+      console.log(success);
+    } catch (er) {
       setError("There was an error subscribing. Please try again.");
+      console.log(error);
     }
   };
 
