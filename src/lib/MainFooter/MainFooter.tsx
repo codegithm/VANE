@@ -47,7 +47,7 @@ const MainFooter: React.FC = () => {
       console.log(success);
     } catch (er) {
       setError("There was an error subscribing. Please try again.");
-      console.log(error);
+      console.log(`${error} : ${er}`);
     }
   };
 
