@@ -2,7 +2,7 @@
 
 .button {
   display: inline-block;
-  padding: var(--paddingSmall) var(--paddingLarge);
+  padding: var(--paddingMedium) var(--paddingLarge);
   background-color: var(--buttonColor); /* Update button color */
   color: white;
   font-family: "Inter", sans-serif;

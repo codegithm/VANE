@@ -68,7 +68,7 @@
 .button {
   background-color: var(--buttonColor);
   color: var(--textColorPrimary);
-  padding: var(--paddingSmall) var(--paddingMedium);
+  padding: var(--paddingMedium);
   border: none;
   cursor: pointer;
   width: 122px;

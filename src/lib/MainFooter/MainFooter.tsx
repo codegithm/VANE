@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -10,8 +12,45 @@ import {
 import styles from "./MainFooter.module.css";
 import Image from "next/image";
 import Container from "../Container/Container";
+import axios from "axios";
+import { SubscriberEmail } from "../../../models/SubscriberEmail";
 
 const MainFooter: React.FC = () => {
+  const [email, setEmail] = useState<string>("");
+  const [error, setError] = useState<string>("");
+  const [policy, setPolicy] = useState<boolean>(false);
+  const [success, setSuccess] = useState<string>("");
+  const [form, setForm] = useState<HTMLFormElement>();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+  const handleChangePolicy = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // setPolicy(e.target.value);
+  };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError("");
+    setSuccess("");
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    const email = formData.get("email") as string;
+    const policy = formData.get("privacyPolicy");
+    const subscriber: SubscriberEmail = {
+      email: email,
+      subscribe: policy === "on",
+    };
+
+    try {
+      await axios.post("/api/subscribe", { subscriber });
+      setSuccess("You’ve successfully subscribed!");
+    } catch (error) {
+      setError("There was an error subscribing. Please try again.");
+    }
+  };
+
   return (
     <footer className={styles.footer}>
       <Container>
@@ -25,13 +64,20 @@ const MainFooter: React.FC = () => {
                 width={120}
                 height={34}
               />
-              <form className={styles.form}>
+              <form onSubmit={handleSubmit} className={styles.form}>
                 <label className={styles.label}>Signup: Promo Newsletter</label>
-                <input type="text" className={styles.input} />
+                <input
+                  type="text"
+                  name="email"
+                  value={email}
+                  onChange={handleChange}
+                  className={styles.input}
+                />
                 <div className={styles.checkboxContainer}>
                   <input
                     type="checkbox"
                     id="privacyPolicy"
+                    name="privacyPolicy"
                     className={styles.checkbox}
                   />
                   <label

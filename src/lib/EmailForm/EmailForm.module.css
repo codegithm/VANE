@@ -16,7 +16,7 @@
 }
 
 .input {
-  padding: var(--paddingSmall) var(--paddingMedium);
+  padding: var(--paddingMedium);
   margin-bottom: var(--paddingSmall);
   border: 1px solid #ccc;
   border-radius: var(--borderRadius);
