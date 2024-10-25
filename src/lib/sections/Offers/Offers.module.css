@@ -1,20 +1,15 @@
 .container {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  flex-direction: column;
-  /* position: relative; */
-}
-.sectionsContainer {
-  height: 100%;
-  width: 100%;
-}
-.leftSection {
-  width: 60%;
-  background-color: var(--backgroundPrimary);
+  padding: var(--paddingLarge);
+  background: linear-gradient(
+    90deg,
+    var(--backgroundSecondary) 65%,
+    var(--accentColor) 35%
+  );
+  text-align: center;
 }
 
-.rightSection {
-  width: 40%;
-  background: var(--backgroundGradientPrimary);
+@media screen and (max-width: 861px) {
+  .container {
+    background: var(--backgroundSecondary);
+  }
 }

@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+  gap: 10px;
+  padding-left: var(--paddingLeftRight);
+  padding-right: var(--paddingLeftRight);
+  padding-top: var(--paddingTopBottom);
+  padding-bottom: var(--paddingTopBottom);
 }
 
 .textContainer,
@@ -10,8 +15,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: left;
 }
-
+@media screen and (max-width: 861px) {
+  .imageContainer {
+    display: none;
+  }
+  .textContainer {
+    width: 100%;
+  }
+}
 .header {
   font-size: 2rem;
   color: var(--textColor);

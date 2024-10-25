@@ -1,9 +1,8 @@
-// pages/api/subscribe.ts
 import { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 import { SubscriberEmail } from "../../../../models/SubscriberEmail";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const subscribeHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   const form: SubscriberEmail = req.body;
   const AUDIENCE_ID = process.env.NEXT_PUBLIC_MAILCHIMP_AUDIENCE_ID;
   const API_KEY = process.env.NEXT_PUBLIC_MAILCHIMP_API_KEY;
@@ -30,16 +29,15 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       "Content-Type": "application/json",
       Authorization: `apikey ${API_KEY}`,
     };
-
     await axios.post(url, data, { headers });
     return res.status(201).json({ message: "Success" });
   } catch (error: unknown) {
     if (axios.isAxiosError(error)) {
-      // Error is an instance of AxiosError
       return res.status(500).json({ error: error.message });
     } else {
-      // Generic error handling
       return res.status(500).json({ error: "An unknown error occurred." });
     }
   }
 };
+
+export default subscribeHandler;
