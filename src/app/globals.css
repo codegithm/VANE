@@ -35,6 +35,7 @@
 /* Box-sizing for all elements */
 * {
   box-sizing: border-box;
+  font-family: "Poppins", Arial, Helvetica, sans-serif !important;
 }
 
 /* Dark theme settings */
@@ -56,11 +57,9 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   margin: 0 !important;
 }
-
 /* Responsive Padding for small screens */
 @media screen and (max-width: 400px) {
   :root {

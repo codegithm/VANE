@@ -2,11 +2,11 @@
 
 .parent {
   display: flex;
-  gap: var(--paddingMedium);
   align-items: center;
-  padding: var(--paddingLarge);
+  padding: var(--paddingLarge) var(--paddingLeftRight);
   background-color: var(--buttonColor);
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .textContainer {

@@ -19,8 +19,8 @@ const Explore: React.FC = () => {
           <Image
             src="/assets/Rectangle 6344.png"
             alt="Creative Design"
-            width={300}
-            height={300}
+            width={400}
+            height={400}
             className={styles.image}
             layout="fixed"
             data-aos="fade-in"
@@ -28,7 +28,7 @@ const Explore: React.FC = () => {
 
           <div className={styles.textContainer}>
             <h2>
-              Designing Beyond Boundaries, Shaping{" "}
+              Designing Beyond Boundaries, Shaping
               <span className={styles.primaryText}>Ideas into Reality</span>
             </h2>
             <p>
@@ -43,7 +43,7 @@ const Explore: React.FC = () => {
               textColor="var(--background)"
               type="button"
             >
-              Explore
+              Let&apos;s chat
             </CustomButton>
           </div>
         </div>

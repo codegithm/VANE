@@ -12,13 +12,10 @@ import {
 import styles from "./MainFooter.module.css";
 import Image from "next/image";
 import Container from "../Container/Container";
-import axios from "axios";
-import { SubscriberEmail } from "../../../models/SubscriberEmail";
 
 const MainFooter: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
-  const [success, setSuccess] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -29,22 +26,18 @@ const MainFooter: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
-    setSuccess("");
-
-    const form = e.target as HTMLFormElement;
-    const formData = new FormData(form);
-
-    const email = formData.get("email") as string;
-    const policy = formData.get("privacyPolicy");
-    const subscriber: SubscriberEmail = {
-      email: email,
-      subscribe: policy === "on",
-    };
 
     try {
-      await axios.post("/api/subscribe", { subscriber });
-      setSuccess("You’ve successfully subscribed!");
-      console.log(success);
+      fetch("/api/newsletter", {
+        method: "POST",
+        body: JSON.stringify({
+          email,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
     } catch (er) {
       setError("There was an error subscribing. Please try again.");
       console.log(`${error} : ${er}`);
@@ -70,6 +63,7 @@ const MainFooter: React.FC = () => {
                   type="text"
                   name="email"
                   value={email}
+                  required
                   onChange={handleChange}
                   className={styles.input}
                 />
@@ -78,6 +72,7 @@ const MainFooter: React.FC = () => {
                     type="checkbox"
                     id="privacyPolicy"
                     name="privacyPolicy"
+                    required
                     className={styles.checkbox}
                   />
                   <label
@@ -103,7 +98,6 @@ const MainFooter: React.FC = () => {
                     href="https://facebook.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={styles.icon}
                   >
                     <FontAwesomeIcon icon={faFacebook} size="2x" />
                   </a>
@@ -111,7 +105,6 @@ const MainFooter: React.FC = () => {
                     href="https://instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={styles.icon}
                   >
                     <FontAwesomeIcon icon={faInstagram} size="2x" />
                   </a>
@@ -119,7 +112,6 @@ const MainFooter: React.FC = () => {
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={styles.icon}
                   >
                     <FontAwesomeIcon icon={faLinkedin} size="2x" />
                   </a>
@@ -127,7 +119,6 @@ const MainFooter: React.FC = () => {
                     href="https://youtube.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={styles.icon}
                   >
                     <FontAwesomeIcon icon={faYoutube} size="2x" />
                   </a>
@@ -135,7 +126,6 @@ const MainFooter: React.FC = () => {
                     href="https://tiktok.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={styles.icon}
                   >
                     <FontAwesomeIcon icon={faTiktok} size="2x" />
                   </a>

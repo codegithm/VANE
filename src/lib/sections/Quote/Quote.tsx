@@ -11,7 +11,7 @@ const Quote: React.FC = () => {
   }, []);
   return (
     <section className={styles.section}>
-      <div className={styles.imageContainer}></div>
+      <div></div>
       <div className={styles.quoteContainer}>
         <div className={styles.quoteContent} data-aos="fade-right">
           <p>

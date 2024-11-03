@@ -100,7 +100,3 @@
 .icons a:hover {
   color: var(--buttonColor);
 }
-
-.icon {
-  width: 22px;
-}

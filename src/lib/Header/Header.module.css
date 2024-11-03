@@ -24,6 +24,5 @@
 }
 
 .chat {
-  font-family: "Inter", sans-serif;
   color: var(--textColorSecondary); /* Ensures the text is clearly visible */
 }

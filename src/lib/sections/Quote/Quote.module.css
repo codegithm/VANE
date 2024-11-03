@@ -13,9 +13,6 @@
     background-position-x: left;
   }
 }
-.imageContainer {
-  flex: 1;
-}
 
 .quoteContainer {
   flex: 1;

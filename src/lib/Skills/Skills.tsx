@@ -27,7 +27,7 @@ const Skills: React.FC<SkillsProps> = ({
           textColor="var(--background)"
           type="button"
         >
-          Explore
+          Let&apos;s chat
         </CustomButton>
       </div>
       <div className={styles.imageContainer}>

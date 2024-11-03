@@ -5,7 +5,6 @@
   border-radius: var(--borderRadius);
   text-align: center;
   background-color: var(--backgroundPrimary);
-  max-width: 350px;
 }
 
 .imageContainer {
