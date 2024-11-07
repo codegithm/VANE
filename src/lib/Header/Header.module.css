@@ -25,4 +25,5 @@
 
 .chat {
   color: var(--textColorSecondary); /* Ensures the text is clearly visible */
+  cursor: pointer;
 }

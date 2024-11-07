@@ -1,0 +1,75 @@
+.parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  min-height: 700px;
+}
+
+.child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--paddingMedium);
+  width: 100%;
+  border: none;
+  gap: 40px;
+  &.callContainer {
+    background: var(--backgroundPrimary);
+    border-radius: var(--borderRadius);
+  }
+  &.emailContainer {
+    background: var(--backgroundGradientTertiary);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+  }
+}
+
+.textContainer {
+  text-align: center;
+  margin-bottom: var(--paddingSmall);
+}
+
+.header {
+  font-size: 1.5rem;
+  &.call {
+    color: var(--textColor);
+  }
+  &.email {
+    color: var(--textColorSecondary);
+  }
+}
+
+.subHeader {
+  font-size: 1.2rem;
+  margin: 0;
+  &.callSubHeader {
+    color: var(--textColor);
+  }
+  &.emailSubHeader {
+    color: var(--textColorSecondary);
+  }
+}
+
+.button {
+  margin-top: var(--paddingSmall);
+}
+
+@media screen and (max-width: 540px) {
+  .parent {
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .child {
+    &.emailContainer {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: var(--borderRadius);
+      border-top-right-radius: 0;
+      border-bottom-right-radius: var(--borderRadius);
+    }
+  }
+}

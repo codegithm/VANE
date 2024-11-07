@@ -19,6 +19,11 @@
     #071e46 51.28%,
     #010425 77.86%
   );
+  --backgroundGradientTertiary: linear-gradient(
+    154.79deg,
+    #1245a8 16%,
+    #071b42 57.28%
+  );
   --landingBackgroundImage: url("/assets/background.png");
   --accentColor: #0d3b79;
   --buttonColor: #43b5f7;
@@ -68,6 +73,9 @@ body {
   }
 }
 
+.ReactModal__Overlay {
+  z-index: 100;
+}
 /* Utility Class for Text Balancing */
 @layer utilities {
   .text-balance {

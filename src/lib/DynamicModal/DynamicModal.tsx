@@ -10,12 +10,14 @@ interface DynamicModalProps {
   isOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
+  section: string;
 }
 
 const DynamicModal: React.FC<DynamicModalProps> = ({
   isOpen,
   onClose,
   children,
+  section,
 }) => {
   useEffect(() => {
     AOS.init({ duration: 1200 });
@@ -25,12 +27,19 @@ const DynamicModal: React.FC<DynamicModalProps> = ({
     <ReactModal
       isOpen={isOpen}
       onRequestClose={onClose}
-      className={styles.modal}
+      className={`${styles.modal} ${
+        section === "banner" ? styles.banner : styles.offers
+      }`}
       overlayClassName={styles.overlay}
       ariaHideApp={false}
       data-aos="fade-in"
     >
-      <button className={styles.closeButton} onClick={onClose}>
+      <button
+        className={`${styles.closeButton} ${
+          section === "banner" ? styles.banner : styles.offers
+        }`}
+        onClick={onClose}
+      >
         &times;
       </button>
       <div data-aos="fade-in" className={styles.content}>

@@ -18,7 +18,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       try {
         await mailchimp.lists.addListMember("00693454e4", {
           email_address: email,
-          status: "subscribed",
+          status: "pending",
         });
 
         res.status(200).json({ status: "Succes" });

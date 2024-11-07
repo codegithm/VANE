@@ -45,9 +45,20 @@
 .emblaButtonNext {
   right: 10px;
 }
-
+@media screen and (max-width: 480px) {
+  .emblaButtonNext {
+    right: -12px;
+  }
+  .emblaButtonPrev {
+    left: -12px;
+  }
+}
 @media (max-width: 768px) {
   .emblaSlide {
     min-width: 100%; /* Show one card at a time on smaller screens */
+    padding: var(--paddingMedium);
+  }
+  .paragraph {
+    padding: var(--paddingMedium);
   }
 }

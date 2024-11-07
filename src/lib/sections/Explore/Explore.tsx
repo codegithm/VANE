@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import styles from "./Explore.module.css";
 import CustomButton from "@/lib/CustomButton/CustomButton";
@@ -7,13 +7,23 @@ import Container from "@/lib/Container/Container";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import DynamicModal from "@/lib/DynamicModal/DynamicModal";
+import LetsChat from "@/lib/LetsChatModal/LetsChat";
 
 const Explore: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   useEffect(() => {
     AOS.init({ duration: 1200 });
   }, []);
   return (
     <section className={styles.containerdiv} id="explore">
+      <DynamicModal
+        section="offers"
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      >
+        <LetsChat />
+      </DynamicModal>
       <Container>
         <div className={styles.parent}>
           <Image
@@ -29,7 +39,7 @@ const Explore: React.FC = () => {
           <div className={styles.textContainer}>
             <h2>
               Designing Beyond Boundaries, Shaping
-              <span className={styles.primaryText}>Ideas into Reality</span>
+              <span className={styles.primaryText}> Ideas into Reality</span>
             </h2>
             <p>
               We blend creativity with innovation to craft unique, impactful
@@ -42,6 +52,9 @@ const Explore: React.FC = () => {
               bgColor="var(--buttonColor)"
               textColor="var(--background)"
               type="button"
+              onClick={() => {
+                setIsModalOpen(true);
+              }}
             >
               Let&apos;s chat
             </CustomButton>

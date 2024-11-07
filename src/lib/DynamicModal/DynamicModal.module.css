@@ -12,11 +12,19 @@
 
 .modal {
   background-color: var(--backgroundPrimary);
-  max-width: 500px;
   width: 90%;
-  padding: var(--paddingLarge);
   border-radius: var(--borderRadius);
   position: relative;
+
+  &.offers {
+    max-width: 900px;
+    padding: 0;
+  }
+
+  &.banner {
+    max-width: 500px;
+    padding: var(--paddingLarge);
+  }
 }
 
 .closeButton {
@@ -27,7 +35,17 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--textColor);
+  z-index: 2;
+  &.banner {
+    color: var(--textColor);
+  }
+  &.offers {
+    color: var(--textColorSecondary);
+    padding: var(--paddingSmall);
+    background-color: var(--textColor);
+    border-radius: 50%;
+    border: none;
+  }
 }
 
 .content {

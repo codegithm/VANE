@@ -1,10 +1,21 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import styles from "./Header.module.css";
+import DynamicModal from "../DynamicModal/DynamicModal";
+import LetsChat from "../LetsChatModal/LetsChat";
 
 const Header: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <nav className={styles.nav}>
+      <DynamicModal
+        section="offers"
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      >
+        <LetsChat />
+      </DynamicModal>
       <div className={styles.container}>
         <Image
           className={styles.logo}
@@ -13,7 +24,14 @@ const Header: React.FC = () => {
           width={120}
           height={50}
         />
-        <div className={styles.chat}>Let&#39;s Chat</div>
+        <div
+          onClick={() => {
+            setIsModalOpen(true);
+          }}
+          className={styles.chat}
+        >
+          Let&#39;s Chat
+        </div>
       </div>
     </nav>
   );

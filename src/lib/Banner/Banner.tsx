@@ -27,7 +27,11 @@ const Banner: React.FC = () => {
         </CustomButton>
         <p className={styles.callText}>Or call: 076 569 2831</p>
       </div>
-      <DynamicModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <DynamicModal
+        section="banner"
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      >
         <h2 className={styles.largeModalText}>We will call you back</h2>
         <CallBackForm>
           <CustomButton
@@ -35,7 +39,6 @@ const Banner: React.FC = () => {
             textColor="var(--background)"
             type="submit"
             widthSize="106px"
-            onClick={() => setIsModalOpen(false)}
           >
             <span>Submit</span>
           </CustomButton>

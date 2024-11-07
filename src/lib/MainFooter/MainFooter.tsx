@@ -12,10 +12,12 @@ import {
 import styles from "./MainFooter.module.css";
 import Image from "next/image";
 import Container from "../Container/Container";
+import Loader from "../Loader/Loader";
 
 const MainFooter: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
+  const [isLoading, seIsLoading] = useState<boolean>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -27,6 +29,8 @@ const MainFooter: React.FC = () => {
     e.preventDefault();
     setError("");
 
+    if (!validateEmail(email)) alert("Your email is invalid");
+    seIsLoading(true);
     try {
       fetch("/api/newsletter", {
         method: "POST",
@@ -37,15 +41,22 @@ const MainFooter: React.FC = () => {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
+          seIsLoading(false);
         });
     } catch (er) {
       setError("There was an error subscribing. Please try again.");
       console.log(`${error} : ${er}`);
+      seIsLoading(false);
     }
   };
 
+  const validateEmail = (email: string) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
   return (
     <footer className={styles.footer}>
+      {isLoading ? <Loader /> : ""}
       <Container>
         <div className={styles.parentContainer}>
           <div className={styles.container}>

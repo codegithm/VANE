@@ -8,6 +8,7 @@ interface SkillsProps {
   subHeader: string;
   paragraph: string;
   imageUrl: string;
+  setIsModalOpen: (isOpen: boolean) => void;
 }
 
 const Skills: React.FC<SkillsProps> = ({
@@ -15,6 +16,7 @@ const Skills: React.FC<SkillsProps> = ({
   subHeader,
   paragraph,
   imageUrl,
+  setIsModalOpen,
 }) => {
   return (
     <div className={styles.skillsContainer}>
@@ -26,6 +28,7 @@ const Skills: React.FC<SkillsProps> = ({
           bgColor="var(--buttonColor)"
           textColor="var(--background)"
           type="button"
+          onClick={() => setIsModalOpen(true)}
         >
           Let&apos;s chat
         </CustomButton>

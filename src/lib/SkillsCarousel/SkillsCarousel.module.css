@@ -45,3 +45,12 @@
 .emblaButtonNext {
   right: 10px;
 }
+
+@media screen and (max-width: 480px) {
+  .emblaButtonNext {
+    right: -12px;
+  }
+  .emblaButtonPrev {
+    left: -12px;
+  }
+}

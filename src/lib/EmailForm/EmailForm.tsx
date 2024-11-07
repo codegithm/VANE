@@ -3,24 +3,35 @@
 import React, { useState } from "react";
 import styles from "./EmailForm.module.css";
 import CustomButton from "../CustomButton/CustomButton";
+import Loader from "../Loader/Loader";
 
 const EmailForm: React.FC = () => {
   const [email, setEmail] = useState<string>("");
-  const [error, setError] = useState<string>("");
+  const [isLoading, seIsLoading] = useState<boolean>(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!validateEmail(email)) alert("Your email is invalid");
+    seIsLoading(true);
+    try {
+      fetch("/api/pending", {
+        method: "POST",
+        body: JSON.stringify({
+          email,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          seIsLoading(false);
+        });
+    } catch {
+      seIsLoading(false);
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (validateEmail(email)) {
-      setError("");
-      alert("Email is valid!");
-      // Handle form submission
-    } else {
-      setError("Please enter a valid email address.");
-    }
   };
 
   const validateEmail = (email: string) => {
@@ -30,15 +41,16 @@ const EmailForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
+      {isLoading ? <Loader /> : ""}
       <input
         type="email"
         id="email"
         value={email}
+        required
         onChange={handleChange}
         className={styles.input}
         placeholder="email"
       />
-      {error && <p className={styles.error}>{error}</p>}
       <CustomButton
         bgColor="var(--buttonColor)"
         textColor="var(--background)"
