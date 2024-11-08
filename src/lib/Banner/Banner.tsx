@@ -21,6 +21,7 @@ const Banner: React.FC = () => {
           bgColor="var(--background)"
           textColor="var(--buttonColor)"
           type="button"
+          widthSize="auto"
           onClick={() => setIsModalOpen(true)}
         >
           Schedule a Call
@@ -38,7 +39,7 @@ const Banner: React.FC = () => {
             bgColor="var(--buttonColor)"
             textColor="var(--background)"
             type="submit"
-            widthSize="106px"
+            widthSize="auto"
           >
             <span>Submit</span>
           </CustomButton>

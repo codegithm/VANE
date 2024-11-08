@@ -1,7 +1,6 @@
 /* Testimony.module.css */
 
 .testimonySection {
-  padding: var(--paddingLarge);
   background-color: var(--background);
   text-align: center;
 }
@@ -17,12 +16,23 @@
   flex-direction: column;
   margin-bottom: 50px;
   align-items: center;
+  padding-left: var(--paddingLeftRight);
+  padding-right: var(--paddingLeftRight);
 }
 .paragraph {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-bottom: var(--paddingLarge);
   color: var(--textColor);
   margin: 0;
   text-align: center;
-  max-width: 540px;
+  max-width: 940px;
+}
+
+@media screen and (max-width: 689px) {
+  .paragraph {
+    font-size: 1rem;
+  }
+  .header {
+    font-size: 1.5rem;
+  }
 }

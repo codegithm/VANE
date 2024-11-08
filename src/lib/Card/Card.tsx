@@ -27,8 +27,10 @@ const Card: React.FC<CardProps> = ({
           className={styles.image}
         />
       </div>
-      <h3 className={styles.name}>{name}</h3>
-      <p className={styles.profession}>{profession}</p>
+      <div className={styles.person}>
+        <h3 className={styles.name}>{name}</h3>
+        <p className={styles.profession}>{profession}</p>
+      </div>
       <p className={styles.testimony}>{testimony}</p>
     </div>
   );

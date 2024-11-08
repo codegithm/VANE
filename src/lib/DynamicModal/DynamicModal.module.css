@@ -41,7 +41,6 @@
   }
   &.offers {
     color: var(--textColorSecondary);
-    padding: var(--paddingSmall);
     background-color: var(--textColor);
     border-radius: 50%;
     border: none;

@@ -11,8 +11,12 @@
 .image {
   border-radius: var(--borderRadius);
   box-shadow: -13px 16px 0px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-  max-height: 400px;
+  /* max-width: 400px;
+  max-height: 400px; */
+  width: 80%;
+  height: auto;
+  margin-left: 13px;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 859px) {
@@ -45,10 +49,17 @@
 }
 
 .textContainer p {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-bottom: var(--paddingMedium);
 }
-
+@media screen and (max-width: 689px) {
+  .textContainer p {
+    font-size: 1rem;
+  }
+  .textContainer h2 {
+    font-size: 1.25;
+  }
+}
 .containerdiv {
   display: flex;
   justify-content: center;

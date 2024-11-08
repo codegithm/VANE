@@ -15,6 +15,9 @@ const LetsChat: React.FC = () => {
         <CustomButton
           bgColor="var(--buttonColor)"
           textColor="var(--background)"
+          onClick={() => {
+            window.location.href = "tel:0782069121";
+          }}
         >
           Call
         </CustomButton>
@@ -29,6 +32,9 @@ const LetsChat: React.FC = () => {
         <CustomButton
           bgColor="var(--buttonColor)"
           textColor="var(--background)"
+          onClick={() => {
+            window.location.href = "mailto:Likhona.C@vanemediadesigns.co.za";
+          }}
         >
           Email
         </CustomButton>

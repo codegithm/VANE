@@ -10,6 +10,15 @@ const LandingPage: React.FC = () => {
     <>
       <Header />
       <section className={styles.section} id="landing">
+        <div className={styles.videoContainer}>
+          <video
+            className={styles.backgroundVideo}
+            src="/assets/vane.mp4" // replace with the path to your video
+            autoPlay
+            loop
+            muted
+          ></video>
+        </div>
         <div className={styles.landingContainer}>
           <Container>
             <div

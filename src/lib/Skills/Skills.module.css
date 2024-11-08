@@ -7,6 +7,7 @@
   padding-right: var(--paddingLeftRight);
   padding-top: var(--paddingTopBottom);
   padding-bottom: var(--paddingTopBottom);
+  justify-content: space-between;
 }
 
 .textContainer,
@@ -36,11 +37,19 @@
 }
 
 .paragraph {
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: var(--textColor);
 }
-
+@media screen and (max-width: 689px) {
+  .paragraph,
+  .subHeader {
+    font-size: 1rem;
+  }
+  .header {
+    font-size: 1.5rem;
+  }
+}
 .image {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }

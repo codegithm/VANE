@@ -1,16 +1,31 @@
-/* LandingPage.module.css */
-
 .section {
   position: relative;
   height: 100vh;
-  background: var(--landingBackgroundImage) no-repeat center center;
-  background-size: cover;
+  overflow: hidden;
 }
+
+.videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Ensure the video is behind other content */
+}
+
+.backgroundVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire area */
+}
+
 @media screen and (max-width: 400px) {
   .section {
     height: 90vh;
   }
 }
+
 .gradientOverlay {
   position: absolute;
   top: 0;
@@ -23,18 +38,21 @@
     #0d3b79 68.09%
   );
 }
+
 .landingContainer {
   display: flex;
   width: 100%;
   height: 100%;
   align-items: flex-end;
 }
+
 .containerContent {
   color: var(--textColorSecondary);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  z-index: 1; /* Ensure the content is above the video */
 }
 
 .containerContent h2 {
@@ -43,8 +61,17 @@
 }
 
 .containerContent p {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-bottom: var(--paddingMedium);
+}
+
+@media screen and (max-width: 689px) {
+  .containerContent p {
+    font-size: 1rem;
+  }
+  .containerContent h2 {
+    font-size: 1.25rem;
+  }
 }
 
 .newLine {
@@ -55,6 +82,7 @@
 .emailUpdates {
   margin-top: var(--paddingLarge);
 }
+
 .primaryText {
   color: var(--buttonColor);
 }

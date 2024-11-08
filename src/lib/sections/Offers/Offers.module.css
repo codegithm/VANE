@@ -1,5 +1,4 @@
 .container {
-  padding: var(--paddingLarge);
   background: linear-gradient(
     90deg,
     var(--backgroundSecondary) 65%,

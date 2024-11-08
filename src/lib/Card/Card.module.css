@@ -10,24 +10,26 @@
 .imageContainer {
   margin-bottom: var(--paddingSmall);
 }
-
+.person {
+  display: flex;
+  flex-direction: column;
+}
 .image {
   border-radius: 50%;
 }
 
 .name {
   font-weight: 600;
-  margin-bottom: var(--paddingSmall);
+  margin: 0;
   color: var(--textColor);
 }
 
 .profession {
   font-weight: 500;
-  margin-bottom: var(--paddingSmall);
+  margin: 0;
   color: var(--textColor);
 }
 
 .testimony {
-  font-weight: bold;
   color: var(--textColor);
 }

@@ -6,8 +6,8 @@ import {
   faFacebook,
   faInstagram,
   faLinkedin,
-  faYoutube,
   faTiktok,
+  faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import styles from "./MainFooter.module.css";
 import Image from "next/image";
@@ -106,7 +106,7 @@ const MainFooter: React.FC = () => {
                 <h3 className={styles.subtitle}>Say Hello</h3>
                 <div className={styles.icons}>
                   <a
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/vanemediadesign"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -120,7 +120,7 @@ const MainFooter: React.FC = () => {
                     <FontAwesomeIcon icon={faInstagram} size="2x" />
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/vane-media-designs-886993218/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -131,10 +131,10 @@ const MainFooter: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FontAwesomeIcon icon={faYoutube} size="2x" />
+                    <FontAwesomeIcon icon={faXTwitter} size="2x" />
                   </a>
                   <a
-                    href="https://tiktok.com"
+                    href="https://www.tiktok.com/@vanemediadesign"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -9,7 +9,7 @@
 
 .imageContainer {
   display: flex;
-  gap: var(--paddingSmall);
+  gap: var(--paddingMedium);
   flex-wrap: wrap;
   justify-content: center;
 }

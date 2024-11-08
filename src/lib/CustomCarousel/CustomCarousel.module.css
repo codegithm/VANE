@@ -15,7 +15,6 @@
 .emblaSlide {
   position: relative;
   min-width: 38%;
-  padding: 10px;
   width: auto;
   display: flex;
   justify-content: center;
@@ -39,24 +38,31 @@
 }
 
 .emblaButtonPrev {
-  left: 10px;
+  left: 20px;
 }
 
 .emblaButtonNext {
-  right: 10px;
+  right: 20px;
+}
+@media screen and (max-width: 768px) {
+  .emblaSlide {
+    padding-left: var(--paddingLeftRight);
+    padding-right: var(--paddingLeftRight);
+  }
 }
 @media screen and (max-width: 480px) {
   .emblaButtonNext {
-    right: -12px;
+    right: 3px;
   }
   .emblaButtonPrev {
-    left: -12px;
+    left: 3px;
   }
 }
 @media (max-width: 768px) {
   .emblaSlide {
     min-width: 100%; /* Show one card at a time on smaller screens */
-    padding: var(--paddingMedium);
+    padding-bottom: var(--paddingLeftRight);
+    padding-top: var(--paddingMedium);
   }
   .paragraph {
     padding: var(--paddingMedium);

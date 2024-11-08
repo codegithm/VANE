@@ -15,15 +15,22 @@
 }
 
 .smallText {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
 .largeText {
-  font-size: 1.25rem;
+  font-size: 1.55rem;
   color: var(--background);
 }
-
+@media screen and (max-width: 689px) {
+  .smallText {
+    font-size: 1rem;
+  }
+  .largeText {
+    font-size: 1.25rem;
+  }
+}
 .largeModalText {
   font-size: 1.25rem;
   color: var(--textColor);
