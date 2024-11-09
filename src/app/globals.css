@@ -35,6 +35,8 @@
   --paddingLeftRight: 11%;
   --paddingTopBottom: 59px;
   --borderRadius: 8px;
+  --arrow: 24px;
+  --nextButton: 40px;
 }
 
 /* Box-sizing for all elements */
@@ -67,6 +69,10 @@ button {
   input,
   button {
     font-size: 1rem;
+  }
+  :root {
+    --arrow: 18px;
+    --nextButton: 28px;
   }
 }
 /* Body Styles */

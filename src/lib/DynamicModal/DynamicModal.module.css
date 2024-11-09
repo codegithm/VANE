@@ -40,9 +40,9 @@
     color: var(--textColor);
   }
   &.offers {
-    color: var(--textColorSecondary);
+    /* color: var(--textColorSecondary);
     background-color: var(--textColor);
-    border-radius: 50%;
+    border-radius: 50%; */
     border: none;
   }
 }

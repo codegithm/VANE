@@ -23,8 +23,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
+  width: var(--nextButton);
+  height: var(--nextButton);
   background-color: var(--buttonColor);
   border-radius: 50%;
   color: var(--background);

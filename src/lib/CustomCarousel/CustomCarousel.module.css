@@ -18,14 +18,15 @@
   width: auto;
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 
 .emblaButton {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
+  width: var(--nextButton);
+  height: var(--nextButton);
   background-color: var(--textColor);
   border-radius: 50%;
   color: var(--background);
@@ -48,6 +49,7 @@
   .emblaSlide {
     padding-left: var(--paddingLeftRight);
     padding-right: var(--paddingLeftRight);
+    padding: 0;
   }
 }
 @media screen and (max-width: 480px) {

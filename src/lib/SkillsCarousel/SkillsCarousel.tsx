@@ -77,8 +77,8 @@ const SkillsCarousel: React.FC<SkillsCarouselProps> = ({ setIsModalOpen }) => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="var(--arrow)"
+          height="var(--arrow)"
           viewBox="0 0 61 38"
           fill="none"
         >
@@ -94,8 +94,8 @@ const SkillsCarousel: React.FC<SkillsCarouselProps> = ({ setIsModalOpen }) => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="var(--arrow)"
+          height="var(--arrow)"
           viewBox="0 0 61 38"
           fill="none"
         >
