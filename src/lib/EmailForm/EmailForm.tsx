@@ -7,26 +7,38 @@ import Loader from "../Loader/Loader";
 
 const EmailForm: React.FC = () => {
   const [email, setEmail] = useState<string>("");
-  const [isLoading, seIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!validateEmail(email)) alert("Your email is invalid");
-    seIsLoading(true);
+
+    if (!validateEmail(email)) {
+      alert("Your email is invalid");
+      return;
+    }
+
+    setIsLoading(true);
     try {
-      fetch("/api/pending", {
+      const response = await fetch("/api/pending", {
         method: "POST",
-        body: JSON.stringify({
-          email,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          seIsLoading(false);
-        });
-    } catch {
-      seIsLoading(false);
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit email");
+      }
+
+      const data = await response.json();
+      console.log(data);
+      setIsLoading(false);
+      alert("Email successfully submitted!");
+    } catch (error) {
+      setIsLoading(false);
+      alert("Failed to submit email. Please try again later.");
+      throw Error("messager: " + error);
     }
   };
 

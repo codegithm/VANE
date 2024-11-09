@@ -17,36 +17,43 @@ import Loader from "../Loader/Loader";
 const MainFooter: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
-  const [isLoading, seIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
-  //   const handleChangePolicy = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //     // setPolicy(e.target.value);
-  //   };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
 
-    if (!validateEmail(email)) alert("Your email is invalid");
-    seIsLoading(true);
+    if (!validateEmail(email)) {
+      alert("Your email is invalid");
+      return;
+    }
+
+    setIsLoading(true);
     try {
-      fetch("/api/newsletter", {
+      const response = await fetch("/api/newsletter", {
         method: "POST",
-        body: JSON.stringify({
-          email,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          seIsLoading(false);
-        });
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to subscribe to the newsletter");
+      }
+
+      const data = await response.json();
+      console.log(data);
+      setIsLoading(false);
+      alert("Successfully subscribed to the newsletter!");
     } catch (er) {
       setError("There was an error subscribing. Please try again.");
-      console.log(`${error} : ${er}`);
-      seIsLoading(false);
+      console.error(error, er);
+      setIsLoading(false);
     }
   };
 

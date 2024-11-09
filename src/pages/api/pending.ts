@@ -2,34 +2,34 @@ import mailchimp from "@mailchimp/mailchimp_marketing";
 import { NextApiRequest, NextApiResponse } from "next";
 
 mailchimp.setConfig({
-  apiKey: "b3d43e0ef01e7c9855758a0fa978f5ca-us11",
-  server: "us11",
+  apiKey: process.env.MAILCHIMP_API_KEY,
+  server: process.env.MAILCHIMP_SERVER_PREFIX || "us11",
 });
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
-    const reqBody = req.body;
-    const reqBodyJson = JSON.parse(reqBody);
-    const { email = "" } = reqBodyJson;
+    const { email } = req.body;
 
     if (!email) {
-      res.status(401).json({ error: "Email not found" });
-    } else {
-      try {
-        await mailchimp.lists.addListMember("00693454e4", {
-          email_address: email,
-          status: "pending",
-        });
+      return res.status(400).json({ error: "Email is required" });
+    }
 
-        res.status(200).json({ status: "Succes" });
-      } catch {
-        res.status(401);
-        throw Error();
-      }
+    try {
+      await mailchimp.lists.addListMember("00693454e4", {
+        email_address: email,
+        status: "pending",
+      });
+
+      return res.status(200).json({ status: "Success" });
+    } catch (error) {
+      console.error("Error adding member to Mailchimp list:", error);
+      return res
+        .status(500)
+        .json({ error: "Failed to add member to Mailchimp list" });
     }
   } else {
-    res.status(401);
-    throw Error();
+    res.setHeader("Allow", ["POST"]);
+    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 };
 
