@@ -13,7 +13,7 @@ const LandingPage: React.FC = () => {
         <div className={styles.videoContainer}>
           <video
             className={styles.backgroundVideo}
-            src="/assets/vane.mp4" // replace with the path to your video
+            src="https://res.cloudinary.com/codegithm/video/upload/v1731134304/videos/klw6mxgqnobbvzlosjve.mp4" // replace with the path to your video
             autoPlay
             loop
             muted
